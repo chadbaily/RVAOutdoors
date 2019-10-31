@@ -1,3 +1,7 @@
+# Node Modules
+web/node_modules
+web/dist
+
 # Logs
 logs
 *.log
