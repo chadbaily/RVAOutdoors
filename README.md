@@ -10,6 +10,7 @@
 - Angular
   - Angular CLI
   - Angular Material
+- NGRX and RxJs
 
 ## Web
 
