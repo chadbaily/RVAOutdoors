@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { increment, decrement, reset } from '../store/actions';
+import { increment, decrement, logout } from '../store/actions';
 
 @Component({
   selector: 'app-dashboard',
@@ -24,6 +24,6 @@ export class DashboardComponent {
   }
 
   reset() {
-    this.store.dispatch(reset());
+    this.store.dispatch(logout());
   }
 }
