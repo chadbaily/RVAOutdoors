@@ -6,7 +6,7 @@ export interface State {
 }
 
 export const initialState: State = {
-  isLoggedIn: false
+  isLoggedIn: true
 };
 
 const _appReducer = createReducer(

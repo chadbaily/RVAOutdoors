@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { logout } from '../store/actions';
 
 @Component({
   selector: 'app-logout',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store: Store<{}>) { }
 
   ngOnInit() {
+    this.store.dispatch(logout());
   }
 
 }
