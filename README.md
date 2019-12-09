@@ -11,6 +11,7 @@
   - Angular CLI
   - Angular Material
 - NGRX and RxJs
+- AWS CodePipeline
 
 ## Web
 
