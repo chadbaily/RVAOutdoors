@@ -1,4 +1,5 @@
 # RVA Outdoors
+![Build Status](https://codebuild.us-east-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiK1FWNDZidUdpZEdMRUlWUDlTejU3UUFjK3RhN0F0QzVnaVJqdFg1RGk2WTVtdDRmNTVCaFFVQnkrNTFiVlNjZERKbDAvNXBSb1ZLTGJRQVNBUnFjQmQ0PSIsIml2UGFyYW1ldGVyU3BlYyI6Ilk1OWlVaDRxTjg2TGFvVkYiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
 
 ## Project Overview
 
