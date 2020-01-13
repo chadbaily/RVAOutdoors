@@ -1,0 +1,35 @@
+#!/bin/bash
+
+set -e
+# Name of file professional-development.zip
+
+CATALINA_HOME='/usr/share/tomcat7'
+DEPLOY_TO_ROOT='false'
+#CONTEXT_PATH='##CONTEXT_PATH##'
+SERVER_HTTP_PORT='80'
+FILE_NAME='professional-development.zip'
+
+TEMP_STAGING_DIR='/tmp/codedeploy-deployment-staging-area'
+STAGED_LOCATION="$TEMP_STAGING_DIR/$FILE_NAME"
+HTTP_PORT_CONFIG_XSL_LOCATION="$TEMP_STAGING_DIR/configure_http_port.xsl"
+
+# In Tomcat, ROOT.war maps to the server root
+if [[ "$DEPLOY_TO_ROOT" = 'true' ]]; then
+    CONTEXT_PATH='ROOT'
+fi
+
+# Remove the old files
+rm -rfv $CATALINA_HOME/webapps/RVA/*
+
+# Copy the ZIP to the RVA directory in TOMCAT
+cp $STAGED_LOCATION $CATALINA_HOME/webapps/RVA
+
+unzip $FILE_NAME
+
+# Configure the Tomcat server HTTP connector
+{ which xsltproc; } || { yum install xsltproc; } || { apt-get install xsltproc; }
+cp $CATALINA_HOME/conf/server.xml $CATALINA_HOME/conf/server.xml.bak
+xsltproc $HTTP_PORT_CONFIG_XSL_LOCATION $CATALINA_HOME/conf/server.xml.bak > $CATALINA_HOME/conf/server.xml
+
+cd /etc/init.d
+tomcat7 start
