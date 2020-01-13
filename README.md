@@ -3,6 +3,7 @@
 ## Project Overview
 
 - This project is a multi-stage project that explores a four tier architecture using Angular as the web front-end. This project aims to have the design and capabilities to be run in a production environment.
+- Based on this AWS tutorial https://github.com/awslabs/aws-devops-essential/
 
 ### Technologies Used
 
